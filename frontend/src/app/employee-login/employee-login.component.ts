@@ -23,7 +23,7 @@ export class EmployeeLoginComponent implements OnInit {
     this.employeeService.getEmployeeList().subscribe(data => { this.employees = data });
   }
 
-  goToLoginPage() {
-    this.router.navigate(['/employee-chat']);
+  goToChatPage(senderId: number) {
+    this.router.navigate(['employee-login',senderId]);
   }
 }

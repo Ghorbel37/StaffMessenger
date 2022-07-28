@@ -1,0 +1,35 @@
+<h2>Chat</h2>
+<!--div class="form-group">
+    <label>Sender Id:</label>
+    <input type="text" required id="senderId" name="message" value="{{this.senderId}}">
+    <label>Receiver Id:</label>
+    <input type="text" required id="receiverId" name="message" value="{{this.receiverId}}">
+</div-->
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Sender</th>
+            <th>Message</th>
+            <th>Date</th>
+            <th>
+                <button (click)="clearMessages()" class="btn btn-danger" style="margin-left: 10px">Clear</button>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let message of messages">
+            <td>{{message.senderId}}</td>
+            <td>{{message.messageBody}}</td>
+            <td>{{message.dateSent}}</td>
+            <td></td>
+        </tr>
+    </tbody>
+</table>
+<form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label>Message:</label>
+        <input type="text" required class="form-control" id="message" [(ngModel)]="message.messageBody" name="message">
+    </div>
+    <br>
+    <button type="submit" class="btn btn-success">Submit</button>
+</form>

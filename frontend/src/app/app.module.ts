@@ -13,6 +13,8 @@ import { SendMessageComponent } from './send-message/send-message.component';
 import { ReceiveMessageComponent } from './receive-message/receive-message.component';
 import { EmployeeChatComponent } from './employee-chat/employee-chat.component';
 import { EmployeeLoginComponent } from './employee-login/employee-login.component';
+import { OpenChatComponent } from './open-chat/open-chat.component';
+import { EmployeeActiveChatComponent } from './employee-active-chat/employee-active-chat.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { EmployeeLoginComponent } from './employee-login/employee-login.componen
     SendMessageComponent,
     ReceiveMessageComponent,
     EmployeeChatComponent,
-    EmployeeLoginComponent
+    EmployeeLoginComponent,
+    OpenChatComponent,
+    EmployeeActiveChatComponent
   ],
   imports: [
     BrowserModule,

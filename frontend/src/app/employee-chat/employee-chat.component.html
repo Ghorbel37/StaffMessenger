@@ -1,4 +1,4 @@
-<h2>List of employees</h2>
+<h2>Chat with an employee</h2>
 <table class="table table-striped">
     <thead>
         <tr>
@@ -14,7 +14,7 @@
             <td>{{employee.lastName}}</td>
             <td>{{employee.emailId}}</td>
             <td>
-                <button  class="btn btn-primary btn-sm">Chat</button>
+                <button (click)="goToActiveChatPage(employee.id)" class="btn btn-primary btn-sm">Chat</button>
             </td>
         </tr>
     </tbody>
