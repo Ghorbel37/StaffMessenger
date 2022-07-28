@@ -1,9 +1,12 @@
 package com.stage.employee.model;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.UUID;
 
-public class Message {
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+public class Message implements Serializable{
 
 	private long senderId;
 	private long receiverId;
@@ -61,4 +64,5 @@ public class Message {
 	public void setDateSent(Date dateSent) {
 		this.dateSent = dateSent;
 	}
+	
 }

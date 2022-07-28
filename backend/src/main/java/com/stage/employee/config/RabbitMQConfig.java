@@ -1,25 +1,25 @@
-//package com.stage.employee.config;
-//
-//import org.springframework.amqp.core.Binding;
-//import org.springframework.amqp.core.BindingBuilder;
-//import org.springframework.amqp.core.Queue;
-//import org.springframework.amqp.core.TopicExchange;
-//import org.springframework.amqp.rabbit.connection.ConnectionFactory;
-//import org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer;
-//import org.springframework.amqp.rabbit.listener.adapter.MessageListenerAdapter;
-//import org.springframework.context.annotation.Bean;
-//
-//import com.stage.employee.service.Receiver;
-//
-//public class RabbitMQConfig {
+package com.stage.employee.config;
+
+import org.springframework.amqp.core.Binding;
+import org.springframework.amqp.core.BindingBuilder;
+import org.springframework.amqp.core.Queue;
+import org.springframework.amqp.core.TopicExchange;
+import org.springframework.amqp.rabbit.connection.ConnectionFactory;
+import org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer;
+import org.springframework.amqp.rabbit.listener.adapter.MessageListenerAdapter;
+import org.springframework.context.annotation.Bean;
+
+import com.stage.employee.service.Receiver;
+
+public class RabbitMQConfig {
 //	private static final String topicExchangeName = "spring-boot-exchange";
 //	public static final String queueName = "spring-boot";
 //	
-//	public static String getQueuename() {
+//	public static String getQueueName() {
 //		return queueName;
 //	}
 //	
-//	public static  String getTopicexchangename() {
+//	public static  String getTopicExchangeName() {
 //		return topicExchangeName;
 //	}
 //
@@ -52,6 +52,6 @@
 //	MessageListenerAdapter listenerAdapter(Receiver receiver) {	
 //		return new MessageListenerAdapter(receiver, "receiveMessage");
 //	}
-//	
-//	
-//}
+	
+	
+}
