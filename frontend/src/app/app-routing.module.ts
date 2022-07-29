@@ -9,6 +9,7 @@ import { EmployeeLoginComponent } from './employee-login/employee-login.componen
 import { OpenChatComponent } from './open-chat/open-chat.component';
 import { ReceiveMessageComponent } from './receive-message/receive-message.component';
 import { SendMessageComponent } from './send-message/send-message.component';
+import { TestComponent } from './test/test.component';
 import { UpdateEmployeeComponent } from './update-employee/update-employee.component';
 
 const routes: Routes = [
@@ -22,7 +23,8 @@ const routes: Routes = [
   { path: 'employee-login', component: EmployeeLoginComponent },
   { path: 'employee-login/:senderId', component: EmployeeChatComponent },
   { path: 'employee-login/:senderId/:receiverId', component: EmployeeActiveChatComponent },
-  { path: 'open-chat', component: OpenChatComponent}
+  { path: 'open-chat', component: OpenChatComponent },
+  { path: 'test', component: TestComponent}
 ];
 
 @NgModule({

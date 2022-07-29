@@ -2,7 +2,7 @@
 @import "~bootstrap/dist/css/bootstrap.css";
 
 .footer {
-    position: absolute;
+    position: fixed;
     bottom: 0;
     color: white;
     background-color: rgb(0, 136, 255);
