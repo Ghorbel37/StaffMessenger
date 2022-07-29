@@ -52,4 +52,17 @@ export class EmployeeActiveChatComponent implements OnInit {
       console.log(data), error => console.log(error));
     this.message.messageBody = "";
   }
+
+
+  determineClassForMessageDiv(senderId) {
+    if (senderId == this.senderId)
+      return "d-flex flex-row justify-content-start"
+    return "d-flex flex-row justify-content-end"
+  }
+
+  determineColorForMessageDiv(senderId) {
+    if (senderId == this.senderId)
+      return "#f5f6f7";
+    return null;
+  }
 }
