@@ -1,27 +1,55 @@
-# AngularEmployeeFrontend
+# StaffMessenger frontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.4.
+Angular web app for **StaffMessenger**: employee management pages and a chat between employees.
 
-## Development server
+Part of the [StaffMessenger](../README.md) monorepo. The API is in [`backend/`](../backend/).
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Tech stack
 
-## Code scaffolding
+- Angular 14, Bootstrap 5
+- nginx and Docker
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Pages
 
-## Build
+| Route | Page |
+|---|---|
+| `/employees` | Employee list with update, delete and details actions |
+| `/create-employee` | Add an employee |
+| `/update-employee/:id` | Edit an employee |
+| `/employee-details/:id` | Employee details |
+| `/employee-login` | Chat: pick who you are |
+| `/employee-login/:senderId` | Chat: pick a colleague |
+| `/employee-login/:senderId/:receiverId` | Chat conversation |
+| `/send-message`, `/receive-message`, `/open-chat` | Earlier messaging prototypes |
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Getting started
 
-## Running unit tests
+### Requirements
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- Node.js 16
+- Angular CLI 14 (`npm install -g @angular/cli@14`)
+- The backend running on port 8080
 
-## Running end-to-end tests
+### Configuration
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+| File | Used by | API URL |
+|---|---|---|
+| `src/environments/environment.ts` | `ng serve` | `http://localhost:8080/api/v1/` |
+| `src/environments/environment.prod.ts` | `ng build` (production) | `/api/v1/`, forwarded to the backend by nginx |
 
-## Further help
+### Run locally (development)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```bash
+npm install
+ng serve
+```
+
+Then open `http://localhost:4200/`.
+
+### Production build
+
+```bash
+ng build
+```
+
+The output goes to `dist/angular_employee_frontend/`. The `Dockerfile` builds it and serves it with nginx (see `nginx.conf`), which also forwards `/api/` to the backend. Run the whole stack with `docker compose up --build` from the repository root.
