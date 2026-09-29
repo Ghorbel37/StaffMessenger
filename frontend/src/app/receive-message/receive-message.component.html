@@ -1,0 +1,43 @@
+<!--div class="col-md-6 offset-md-3">
+    <h3>Inbox</h3>
+    <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label>Message:</label>
+            <input type="text" class="form-control" id="message" name="message">
+        </div>-->
+
+        <h2>Inbox</h2>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>UUID</th>
+                    <th>Message</th>
+                    <th>Date</th>
+                    <th>
+                    <button (click)="clearMessages()" class="btn btn-danger" style="margin-left: 10px">Clear</button>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let message of messages">
+                    <td>{{message.uuid}}</td>
+                    <td>{{message.messageBody}}</td>
+                    <td>{{message.dateSent}}</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!--<div class="form-group">
+            <label>Last Name:</label>
+            <input type="text" class="form-control" id="lastName" [(ngModel)]="employee.lastName" name="lastName">
+        </div>
+    
+        <div class="form-group">
+            <label>Email:</label>
+            <input type="text" class="form-control" id="emailId" [(ngModel)]="employee.emailId" name="emailId">
+        </div>
+        <br>
+        <button type="submit" class="btn btn-success">Submit</button>
+    </form>
+</div>-->
